@@ -5,13 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="./assets/normalize.css" />
+    <link rel="stylesheet" href="./assets/styles.css" />
   </head>
   <body>
-    <header class="topBar">
-      <span class="scores">View high scores</span>
-      <span class="time">Time: 0</span>
-    </header>
-    <main class="questionAnswer">
+    <div class="topBar scores">View high scores</div>
+    <div class="topBar time">Time: 0</div>
+    <div class="startQuiz container">
+      <h1 class="startQuiz title">Coding Quiz Challenge</h1>
+      <p class="startQuiz text">
+        Try to answer the following code related questions within the time
+        limit. Keep in mind that incorrect answers will penalize your score/time
+        by ten seconds!
+      </p>
+      <input class="startQuiz btn" type="button" value="Start Quiz" />
+    </div>
+    <main class="questionAnswer container">
       <h1 class="questionAnswer prompt">
         Commonly included data types do not include:
       </h1>
@@ -24,24 +33,26 @@
       </div>
       <div class="questionAnswer result">Correct</div>
     </main>
-    <div class="finalScore">
+    <div class="finalScore container">
       <h1 class="finalScore title">All done!</h1>
       <h2 class="finalScore score">Your final score is: 00</h2>
-      <h2 class="finalScore text">Enter intials:</h2>
-      <input class="finalScore intials" type="text" />
+      <form class="finalScore text">
+        <label for="fname">First name: </label>
+        <input type="text" id="fname" name="fname" />
+      </form>
     </div>
 
-    <div class="highScore">
+    <div class="highScore container">
       <h1 class="highScore title">High Scores:</h1>
-      <section class="highScores scoresList">
-        <div class="highScore score">1. AS - 00</div>
-      </section>
-      <input class="highScores backBtn" type="button" value="Go back" />
-      <input
-        class="highScores clearBtn"
-        type="button"
-        value="Clear high scores"
-      />
+      <div class="highScore score">1. AS - 00</div>
+      <div class="buttons">
+        <input class="highScore backBtn" type="button" value="Go back" />
+        <input
+          class="highScore clearBtn"
+          type="button"
+          value="Clear high scores"
+        />
+      </div>
     </div>
   </body>
 </html>
