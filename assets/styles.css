@@ -135,6 +135,7 @@ body {
   display: none;
   flex-direction: column;
   justify-content: center;
+  width: 50vw;
   margin: 5rem;
 }
 
@@ -144,20 +145,17 @@ body {
 }
 
 .highScore {
+  align-self: stretch;
   text-align: center;
-  display: block;
   background-color: dimgrey;
   margin: 0.5rem;
-}
-
-#highScoreClearBtn,
-#highScoreBackBtn {
-  align-self: center;
+  color: white;
 }
 
 #highScoreButtons {
   display: flex;
   flex-direction: row;
+  align-self: center;
 }
 
 #highScoreButtons button {
