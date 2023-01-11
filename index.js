@@ -71,7 +71,7 @@ const answerDEl = document.getElementById("answerD");
 //Set global variables
 let index = 0;
 var countDown = 90;
-var obj = {};
+var scoresArray = [];
 
 startButtonEl.addEventListener("click", () => {
   resetTimer();
@@ -80,11 +80,23 @@ startButtonEl.addEventListener("click", () => {
 
 finalScoreForm.addEventListener("submit", function (e) {
   e.preventDefault();
+  while (highScoresListEl.lastElementChild) {
+    highScoresListEl.removeChild(highScoresListEl.lastElementChild);
+  }
   const name = document.querySelector("input[type=text]").value;
-  const divEl = document.createElement("div");
-  divEl.classList.add("highScore");
-  divEl.innerHTML = `${name} - ${countDown}`;
-  highScoresListEl.appendChild(divEl);
+  scoresArray.push([name, countDown]);
+  scoresArray.sort(function (a, b) {
+    return a[1] - b[1];
+  });
+  scoresArray.reverse();
+  for (let i = 0; i < scoresArray.length; i++) {
+    let first = scoresArray[i][0];
+    let second = scoresArray[i][1];
+    const divEl = document.createElement("div");
+    divEl.classList.add("highScore");
+    divEl.innerHTML = first + " - " + second;
+    highScoresListEl.appendChild(divEl);
+  }
   displayHighScore();
 });
 
