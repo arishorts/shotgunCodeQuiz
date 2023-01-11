@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="./assets/styles.css" />
   </head>
   <body>
-    <div onclick="displayHighScore()" id="topBarScores">View high scores</div>
+    <div id="topBarScores">View high scores</div>
     <div id="topBarTime">Time: 90</div>
     <form id="startQuizContainer" id="form">
-      <h1 id="startQuizTitle">Coding Quiz Challenge</h1>
-      <p id="startQuizText">
+      <h1>Coding Quiz Challenge</h1>
+      <p>
         Try to answer the following code related questions within the time
         limit. Keep in mind that incorrect answers will penalize your score/time
         by ten seconds!
@@ -22,65 +22,49 @@
     </form>
 
     <form id="questionContainer" id="form2">
-      <h1 id="questionPrompt">Commonly included data types do not include:</h1>
+      <h2 id="questionPrompt"></h2>
       <button
         type="button"
         onclick="checkAnswer('answerA')"
         id="answerA"
-        class="question"
-      >
-        Strings
-      </button>
+        class="answer"
+      ></button>
       <button
         type="button"
         onclick="checkAnswer('answerB')"
         id="answerB"
-        class="question"
-      >
-        Numbers
-      </button>
+        class="answer"
+      ></button>
       <button
         type="button"
         onclick="checkAnswer('answerC')"
         id="answerC"
-        class="question"
-      >
-        Booleans
-      </button>
+        class="answer"
+      ></button>
       <button
         type="button"
         onclick="checkAnswer('answerD')"
         id="answerD"
-        class="question"
-      >
-        Alerts
-      </button>
-      <div id="questionLineBr">
-        _________________________________________________________
-      </div>
-      <div id="questionResult">Correct</div>
+        class="answer"
+      ></button>
+      <div id="questionLineBr"></div>
+      <div id="questionResult"></div>
     </form>
     <div id="finalScoreContainer">
-      <h1 id="finalScoreTitle">All done!</h1>
-      <h2 id="finalScoreValue">Your final score is: 00</h2>
+      <h2>All done!</h2>
+      <h3 id="finalScoreValue">Your final score is: 00</h3>
       <form id="finalScoreForm">
-        <label for="fname">First name: </label>
-        <input type="text" id="fname" name="fname" />
+        <label for="fname">Initials: </label>
+        <input type="text" id="fname" name="fname" maxlength="2" />
         <button type="submit" id="submitQuizBtn" value>Submit</button>
       </form>
     </div>
 
     <div id="highScoreContainer">
-      <h1 id="highScoreTitle">High Scores:</h1>
+      <h2>High Scores:</h2>
       <ul id="highScoresList"></ul>
       <div id="highScoreButtons">
-        <button
-          onclick="displayStartQuiz()"
-          type="button"
-          id="highScoreBackBtn"
-        >
-          Go back
-        </button>
+        <button type="button" id="highScoreBackBtn">Go back</button>
         <button type="button" id="highScoreClearBtn">Clear high scores</button>
       </div>
     </div>

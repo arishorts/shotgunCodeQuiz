@@ -45,14 +45,34 @@ body {
 }
 
 #startQuizContainer {
-  justify-self: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0 5rem;
+}
+
+#startQuizContainer h1 {
+  text-align: center;
+  margin: 2rem;
+}
+
+#startQuizContainer p {
+  margin: 0 5rem;
+}
+
+#startQuizContainer button {
+  margin: 2rem;
+  background-color: rgb(67, 104, 105);
+  border: 0;
+  color: white;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.3);
 }
 
 #questionContainer {
+  max-width: 70vw;
   margin: 0 5rem;
   display: none;
   flex-direction: column;
@@ -60,16 +80,39 @@ body {
   align-items: flex-start;
 }
 
+#questionContainer h2 {
+  align-self: center;
+  margin: 2rem;
+}
+
+.answer {
+  margin: 0.5rem;
+  background-color: rgb(67, 104, 105);
+  border: 0;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 5px;
+  box-shadow: 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.3);
+}
+
+#questionLineBr {
+  margin-top: 2rem;
+  height: 1px;
+  width: 100%;
+  background-color: black;
+}
+
 #questionLineBr,
 #questionResult {
-  display: none;
+  display: flex;
 }
 
 #finalScoreContainer {
-  width: 40vw;
+  min-width: 50vw;
   display: none;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 #finalScoreText {
@@ -78,14 +121,31 @@ body {
   justify-content: flex-start;
 }
 
+#finalScoreForm button {
+  margin: 0.5rem;
+  background-color: rgb(67, 104, 105);
+  border: 0;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 5px;
+  box-shadow: 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.3);
+}
+
 #highScoreContainer {
-  width: 400px;
   display: none;
   flex-direction: column;
   justify-content: center;
+  margin: 5rem;
+}
+
+#highScoreContainer h2 {
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .highScore {
+  text-align: center;
+  display: block;
   background-color: dimgrey;
   margin: 0.5rem;
 }
@@ -98,4 +158,23 @@ body {
 #highScoreButtons {
   display: flex;
   flex-direction: row;
+}
+
+#highScoreButtons button {
+  margin: 0.5rem;
+  margin-top: 2rem;
+  background-color: rgb(67, 104, 105);
+  border: 0;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 5px;
+  box-shadow: 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.3);
+}
+
+@media (hover: hover) {
+  .answer:hover,
+  #finalScoreForm button:hover,
+  #highScoreButtons button:hover {
+    background-color: cadetblue;
+  }
 }
