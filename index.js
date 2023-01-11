@@ -11,38 +11,38 @@ const questionsList = [
     answerd: "Josh",
     correct: "answerC",
   },
-  // {
-  //   question: "Who runs into walls whenever running down the stairs?",
-  //   answera: "Ariel",
-  //   answerb: "Master Chief",
-  //   answerc: "Jonah",
-  //   answerd: "Josh",
-  //   correct: "answerB",
-  // },
-  // {
-  //   question: "Who left his toys all over the floor?",
-  //   answera: "Ariel",
-  //   answerb: "Jonah",
-  //   answerc: "Master Chief",
-  //   answerd: "Josh",
-  //   correct: "answerC",
-  // },
-  // {
-  //   question: "Who is a handsome boy?",
-  //   answera: "Master Chief",
-  //   answerb: "Ariel",
-  //   answerc: "Jonah",
-  //   answerd: "Josh",
-  //   correct: "answerA",
-  // },
-  // {
-  //   question: `Who misses Ariel when his steps \noutside the house for 1 minute?`,
-  //   answera: "Josh",
-  //   answerb: "Ariel",
-  //   answerc: "Jonah",
-  //   answerd: "Master Chief",
-  //   correct: "answerD",
-  // },
+  {
+    question: "Who runs into walls whenever running down the stairs?",
+    answera: "Ariel",
+    answerb: "Master Chief",
+    answerc: "Jonah",
+    answerd: "Josh",
+    correct: "answerB",
+  },
+  {
+    question: "Who left his toys all over the floor?",
+    answera: "Ariel",
+    answerb: "Jonah",
+    answerc: "Master Chief",
+    answerd: "Josh",
+    correct: "answerC",
+  },
+  {
+    question: "Who is a handsome boy?",
+    answera: "Master Chief",
+    answerb: "Ariel",
+    answerc: "Jonah",
+    answerd: "Josh",
+    correct: "answerA",
+  },
+  {
+    question: `Who misses Ariel when his steps \noutside the house for 1 minute?`,
+    answera: "Josh",
+    answerb: "Ariel",
+    answerc: "Jonah",
+    answerd: "Master Chief",
+    correct: "answerD",
+  },
 ];
 
 //Start quiz page
@@ -77,7 +77,7 @@ var countDown = 90;
 var scoresArray = [];
 
 //once start button is clicked, begin the quiz with question 1 and a fresh timer
-startButtonEl.addEventListener("click", () => {
+startButtonEl.addEventListener("click", function () {
   questionLineBrEl.style.visibility = "hidden";
   questionResultEl.style.visibility = "hidden";
   resetTimer();
@@ -118,14 +118,10 @@ finalScoreForm.addEventListener("submit", function (e) {
 });
 
 //restart quiz when the 'go back' button is hit
-highScoreBackEl.addEventListener("click", () => {
-  displayStartQuiz();
-});
+highScoreBackEl.addEventListener("click", displayStartQuiz);
 
 //display high scores  when the 'View high scores' text is hit
-topBarScoresEl.addEventListener("click", () => {
-  displayHighScore();
-});
+topBarScoresEl.addEventListener("click", displayHighScore);
 
 //clear high scores when 'clear high scores' is hit
 highScoreClearEl.addEventListener("click", () => {
@@ -167,6 +163,7 @@ function displayFinalScore() {
 }
 
 function displayHighScore() {
+  topBarScoresEl.addEventListener("click", displayHighScore);
   startContainerEl.style.display = "none";
   questionContainerEl.style.display = "none";
   finalScoreContainerEl.style.display = "none";
@@ -220,13 +217,17 @@ function checkAnswer(userAnswer) {
     index++;
   }
   if (index < questionsList.length) {
+    //dont want the user to display high scores while the next question is rendering
+    topBarScoresEl.removeEventListener("click", displayHighScore);
     const myTimeout = setTimeout(() => {
-      // topBarScoresEl.addEventListener("click", () => {
-      //   clearTimeout(myTimeout);
-      // });
+      //give user back functionality after new question renders
+      topBarScoresEl.addEventListener("click", displayHighScore);
       displayQuestion();
     }, 1000);
   } else {
+    //dont want the user to display high scores while the final question is rendering
+    //functionality is given back once High Scores are visible
+    topBarScoresEl.removeEventListener("click", displayHighScore);
     timeEl.innerHTML = "COMPLETED";
     const myTimeout = setTimeout(() => {
       displayFinalScore();
