@@ -4,6 +4,15 @@
   box-sizing: border-box;
 }
 
+h1,
+h2,
+h3,
+h4,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -19,23 +28,23 @@ body {
   align-items: center;
 }
 
-.topBar {
+#topBar {
   display: flex;
   justify-content: space-between;
 }
 
-.scores {
+#topBarScores {
   position: absolute;
   top: 2rem;
   left: 2rem;
 }
-.time {
+#topBarTime {
   position: absolute;
   top: 2rem;
   right: 2rem;
 }
 
-.startQuiz.container {
+#startQuizContainer {
   justify-self: center;
   display: flex;
   flex-direction: column;
@@ -43,7 +52,7 @@ body {
   align-items: center;
 }
 
-.questionAnswer.container {
+#questionContainer {
   margin: 0 5rem;
   display: none;
   flex-direction: column;
@@ -51,41 +60,42 @@ body {
   align-items: flex-start;
 }
 
-.questionAnswer.lineBr,
-.questionAnswer.result {
-  display: flex;
+#questionLineBr,
+#questionResult {
+  display: none;
 }
 
-.finalScore {
+#finalScoreContainer {
   width: 40vw;
   display: none;
   flex-direction: column;
   justify-content: center;
 }
 
-.finalScore.text {
+#finalScoreText {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
 }
 
-.highScore.container {
+#highScoreContainer {
   width: 400px;
   display: none;
   flex-direction: column;
   justify-content: center;
 }
 
-.highScore.score {
+.highScore {
   background-color: dimgrey;
+  margin: 0.5rem;
 }
 
-.highScore.clearBtn,
-.highScore.backBtn {
+#highScoreClearBtn,
+#highScoreBackBtn {
   align-self: center;
 }
 
-.buttons {
+#highScoreButtons {
   display: flex;
   flex-direction: row;
 }

@@ -9,50 +9,81 @@
     <link rel="stylesheet" href="./assets/styles.css" />
   </head>
   <body>
-    <div class="topBar scores">View high scores</div>
-    <div class="topBar time">Time: 0</div>
-    <div class="startQuiz container">
-      <h1 class="startQuiz title">Coding Quiz Challenge</h1>
-      <p class="startQuiz text">
+    <div onclick="displayHighScore()" id="topBarScores">View high scores</div>
+    <div id="topBarTime">Time: 90</div>
+    <form id="startQuizContainer" id="form">
+      <h1 id="startQuizTitle">Coding Quiz Challenge</h1>
+      <p id="startQuizText">
         Try to answer the following code related questions within the time
         limit. Keep in mind that incorrect answers will penalize your score/time
         by ten seconds!
       </p>
-      <input class="startQuiz btn" type="button" value="Start Quiz" />
-    </div>
-    <main class="questionAnswer container">
-      <h1 class="questionAnswer prompt">
-        Commonly included data types do not include:
-      </h1>
-      <div class="questionAnswer answer1">Strings</div>
-      <div class="questionAnswer answer2">Numbers</div>
-      <div class="questionAnswer answer3">Booleans</div>
-      <div class="questionAnswer answer4">Alerts</div>
-      <div class="questionAnswer lineBr">
+      <button type="button" id="startQuizBtn">Start Quiz</button>
+    </form>
+
+    <form id="questionContainer" id="form2">
+      <h1 id="questionPrompt">Commonly included data types do not include:</h1>
+      <button
+        type="button"
+        onclick="checkAnswer('answerA')"
+        id="answerA"
+        class="question"
+      >
+        Strings
+      </button>
+      <button
+        type="button"
+        onclick="checkAnswer('answerB')"
+        id="answerB"
+        class="question"
+      >
+        Numbers
+      </button>
+      <button
+        type="button"
+        onclick="checkAnswer('answerC')"
+        id="answerC"
+        class="question"
+      >
+        Booleans
+      </button>
+      <button
+        type="button"
+        onclick="checkAnswer('answerD')"
+        id="answerD"
+        class="question"
+      >
+        Alerts
+      </button>
+      <div id="questionLineBr">
         _________________________________________________________
       </div>
-      <div class="questionAnswer result">Correct</div>
-    </main>
-    <div class="finalScore container">
-      <h1 class="finalScore title">All done!</h1>
-      <h2 class="finalScore score">Your final score is: 00</h2>
-      <form class="finalScore text">
+      <div id="questionResult">Correct</div>
+    </form>
+    <div id="finalScoreContainer">
+      <h1 id="finalScoreTitle">All done!</h1>
+      <h2 id="finalScoreValue">Your final score is: 00</h2>
+      <form id="finalScoreForm">
         <label for="fname">First name: </label>
         <input type="text" id="fname" name="fname" />
+        <button type="submit" id="submitQuizBtn" value>Submit</button>
       </form>
     </div>
 
-    <div class="highScore container">
-      <h1 class="highScore title">High Scores:</h1>
-      <div class="highScore score">1. AS - 00</div>
-      <div class="buttons">
-        <input class="highScore backBtn" type="button" value="Go back" />
-        <input
-          class="highScore clearBtn"
+    <div id="highScoreContainer">
+      <h1 id="highScoreTitle">High Scores:</h1>
+      <ul id="highScoresList"></ul>
+      <div id="highScoreButtons">
+        <button
+          onclick="displayStartQuiz()"
           type="button"
-          value="Clear high scores"
-        />
+          id="highScoreBackBtn"
+        >
+          Go back
+        </button>
+        <button type="button" id="highScoreClearBtn">Clear high scores</button>
       </div>
     </div>
+    <script src="./index.js"></script>
   </body>
 </html>
