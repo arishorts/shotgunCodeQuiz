@@ -4,47 +4,50 @@
 
 const questionsList = [
   {
-    question: "Who eats his own vomit?",
-    answera: "Ariel",
-    answerb: "Jonah",
-    answerc: "Master Chief",
-    answerd: "Josh",
+    question: "What is the proper method to listen for an event?",
+    answera: "EventTarget.hearEvent()",
+    answerb: "EventTarget.waitForEvent",
+    answerc: "EventTarget.addEventListener()",
+    answerd: "EventTarget.event()",
     correct: "answerC",
   },
   {
-    question: "Who runs into walls whenever running down the stairs?",
-    answera: "Ariel",
-    answerb: "Master Chief",
-    answerc: "Jonah",
-    answerd: "Josh",
-    correct: "answerB",
-  },
-  {
-    question: "Who left his toys all over the floor?",
-    answera: "Ariel",
-    answerb: "Jonah",
-    answerc: "Master Chief",
-    answerd: "Josh",
+    question:
+      "What method repeatedly calls a function with a fixed time delay?",
+    answera: "setTimeout()",
+    answerb: "clearInterval()",
+    answerc: "setInterval()",
+    answerd: "timeDelay()",
     correct: "answerC",
   },
   {
-    question: "Who is a handsome boy?",
-    answera: "Master Chief",
-    answerb: "Ariel",
-    answerc: "Jonah",
-    answerd: "Josh",
+    question:
+      "To add an element to the DOM you must createElement and then use which method?",
+    answera: "include()",
+    answerb: "add()",
+    answerc: "push()",
+    answerd: "append()",
+    correct: "answerD",
+  },
+  {
+    question:
+      "When called inside an arrow function, what does 'this' refer to?",
+    answera: "the window object",
+    answerb: "the nearest object",
+    answerc: "event.target",
+    answerd: "the first argument passed",
     correct: "answerA",
   },
   {
-    question: `Who misses Ariel when his steps \noutside the house for 1 minute?`,
-    answera: "Josh",
-    answerb: "Ariel",
-    answerc: "Jonah",
-    answerd: "Master Chief",
-    correct: "answerD",
+    question: `Which is not a method to select a DOM element node?`,
+    answera: "getElementById",
+    answerb: "getElementByClass",
+    answerc: "querySelector",
+    answerd: "querySelectorAll",
+    correct: "answerB",
   },
 ];
-
+document.querySelectorAll;
 //Start quiz page
 const startButtonEl = document.getElementById("startQuizBtn");
 const startContainerEl = document.getElementById("startQuizContainer");
